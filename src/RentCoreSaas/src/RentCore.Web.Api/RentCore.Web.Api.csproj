@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RentCore.Domain\RentCore.Domain.csproj" />
+    <ProjectReference Include="..\RentCore.Application\RentCore.Application.csproj" />
+    <ProjectReference Include="..\RentCore.Infrastructure\RentCore.Infrastructure.csproj" />
+    <ProjectReference Include="..\RentCore.Persistence\RentCore.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
