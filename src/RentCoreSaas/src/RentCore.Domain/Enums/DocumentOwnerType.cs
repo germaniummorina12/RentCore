@@ -1,3 +1,4 @@
-﻿namespace RentCore.Domain.Enums;
-
-public enum DocumentOwnerType { Reservation, Customer }
+﻿namespace RentCore.Domain.Enums
+{
+    public enum DocumentOwnerType { Vehicle, RentalAgreement, Customer }
+}

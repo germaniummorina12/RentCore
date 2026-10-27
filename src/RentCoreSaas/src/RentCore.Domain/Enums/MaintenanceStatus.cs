@@ -1,3 +1,4 @@
-﻿namespace RentCore.Domain.Enums;
-
-public enum MaintenanceStatus { Open, InProgress, Resolved }
+﻿namespace RentCore.Domain.Enums
+{
+    public enum MaintenanceStatus { Open, InProgress, Resolved }
+}
