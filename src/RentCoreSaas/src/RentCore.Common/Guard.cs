@@ -12,10 +12,7 @@ public static class Guard
     public static T AgainstNull<T>(T? value, string paramName) where T : class
         => value ?? throw new ArgumentNullException(paramName);
 
-    public static decimal AgainstNegativeOrZero(decimal value, string paramName)
-    {
-        if (value <= 0)
-            throw new ArgumentOutOfRangeException(paramName, "Must be greater than zero.");
-        return value;
-    }
+    public static decimal AgainstNegativeOrZero(decimal value, string paramName) 
+    => value > 0 ? value : throw new ArgumentOutOfRangeException(paramName, "Must be greater than zero.");
+
 }

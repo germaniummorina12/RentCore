@@ -2,11 +2,15 @@
 
 namespace RentCore.Domain.Entities;
 
-public class InvoiceLine : BaseEntity<Guid>
+public class InvoiceLine : BaseEntity<Guid>, IAuditableEntity
 {
     public string? Name { get; set; }
     public int Quantity { get; set; }
-    public DateTime Days { get; set; }
-    public decimal UnitPrice { get; private set; }
-    public decimal LineTotal => Quantity * UnitPrice;
+    public int Days { get; set; }
+    public decimal UnitPrice { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public string? CreatedBy { get; set; }
+    public DateTime? UpdatedAt { get; set; }
+    public string? UpdatedBy { get; set; }
+
 }

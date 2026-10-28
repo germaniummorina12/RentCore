@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace RentCore.Common;
+﻿namespace RentCore.Common;
 
 public sealed class PaginatedList<T>
 {
@@ -8,7 +6,6 @@ public sealed class PaginatedList<T>
     public int PageNumber { get; }
     public int TotalPages { get; }
     public int TotalCount { get; }
-
     public bool HasPreviousPage => PageNumber > 1;
     public bool HasNextPage => PageNumber < TotalPages;
 
@@ -20,10 +17,10 @@ public sealed class PaginatedList<T>
         Items = items.AsReadOnly();
     }
 
-    public static async Task<PaginatedList<T>> CreateAsync(IQueryable<T> source, int pageNumber, int pageSize)
+    public static Task<PaginatedList<T>> CreateAsync(IQueryable<T> source, int pageNumber, int pageSize)
     {
-        var count = await source.CountAsync();
-        var items = await source.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
-        return new PaginatedList<T>(items, count, pageNumber, pageSize);
+        var count = source.Count();
+        var items = source.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+        return Task.FromResult(new PaginatedList<T>(items, count, pageNumber, pageSize));
     }
 }

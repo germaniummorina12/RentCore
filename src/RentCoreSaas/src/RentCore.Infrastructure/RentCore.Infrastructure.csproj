@@ -1,6 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <PackageReference Include="FluentFTP" Version="55.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Core" Version="1.2.13" />
+    <PackageReference Include="Quartz.Extensions.Hosting" Version="4.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\RentCore.Application\RentCore.Application.csproj" />
   </ItemGroup>
 

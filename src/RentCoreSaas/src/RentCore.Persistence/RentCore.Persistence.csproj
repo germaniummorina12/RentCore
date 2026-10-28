@@ -1,6 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.14" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="10.0.14" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.14" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\RentCore.Domain\RentCore.Domain.csproj" />
     <ProjectReference Include="..\RentCore.Application\RentCore.Application.csproj" />
     <ProjectReference Include="..\RentCore.Common\RentCore.Common.csproj" />
