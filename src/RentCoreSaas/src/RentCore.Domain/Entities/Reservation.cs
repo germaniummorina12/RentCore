@@ -8,7 +8,7 @@ public sealed class Reservation : BaseEntity<Guid>, IAuditableEntity
     public Guid CustomerId { get; set; }
     public DateOnly CheckIn { get; set; }
     public DateOnly CheckOut { get; set; } 
-    public int PlannedKm { get; set; }
+    public int? PlannedKm { get; set; }
     public bool IsActive { get; set; }
 
     public DateTime CreatedAt { get; set; }
